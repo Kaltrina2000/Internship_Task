@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pabau</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
+      .container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ccc; /* Add border */
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+        padding: 8px; /* padding for both margin and padding */
+        font-size: 16px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      label {
+        margin: 8px 0;
+      }
+
+      button {
+        margin: 8px 0;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pabau Checkbox Form</h1>
+      <form id="checkboxForm">
+        <div class="checkbox-container">
+          <label><input type="checkbox" value="Internship" />Internship</label>
+          <label><input type="checkbox" value="Pabau" />Pabau</label>
+          <label><input type="checkbox" value="Employment" />Employment</label>
+          <label><input type="checkbox" value="Career" />Career</label>
+        </div>
+        <button id="shuffleButton">Shuffle Values</button>
+        <button id="changeButton">Change Values</button>
+        <button id="showSelectedButton">Show selected values</button>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
