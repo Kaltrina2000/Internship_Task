@@ -1,14 +1,10 @@
-import React, { useState } from "react";
-import { Header } from "./components/Header";
+import React from "react";
 import { Body } from "./components/Body";
 import { Footer } from "./components/Footer";
-
+import "./style/reset.css";
 function App() {
-  const [step, setStep] = useState(1); // You can manage the step state as needed
-
   return (
     <div className="App">
-      <Header step={step} />
       {/* Rest of your application */}
       <Body />
       <Footer />
