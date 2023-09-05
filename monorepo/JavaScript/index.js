@@ -5,26 +5,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const showSelectedButton = document.getElementById("showSelectedButton");
   const result = document.getElementById("result");
 
-  // Function to shuffle the checkboxes and their labels
   function shuffleCheckboxes() {
+    const checkboxContainer = document.querySelector(".checkbox-container");
     const checkboxLabelPairs = Array.from(
-      checkboxForm.querySelectorAll("label")
+      checkboxContainer.querySelectorAll("label")
     );
-    checkboxLabelPairs.sort(() => Math.random() - 0.5);
 
-    // Reorder the checkbox-label pairs within the form
+    for (let i = checkboxLabelPairs.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [checkboxLabelPairs[i], checkboxLabelPairs[j]] = [
+        checkboxLabelPairs[j],
+        checkboxLabelPairs[i],
+      ];
+    }
+
+    checkboxContainer.innerHTML = "";
     checkboxLabelPairs.forEach((pair) => {
-      checkboxForm.appendChild(pair);
+      checkboxContainer.appendChild(pair);
     });
   }
 
-  // Add a click event listener to the "Shuffle Values" button
   shuffleButton.addEventListener("click", function (e) {
     e.preventDefault();
     shuffleCheckboxes();
   });
 
-  // Function to change the values and labels of the checkboxes
   function changeCheckboxValuesAndLabels() {
     const checkboxes = Array.from(
       checkboxForm.querySelectorAll('input[type="checkbox"]')
@@ -37,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     checkboxes.forEach((checkbox, index) => {
-      // Create a new label element
       const newLabel = document.createElement("label");
       const newCheckbox = document.createElement("input");
       newCheckbox.type = "checkbox";
@@ -45,30 +49,26 @@ document.addEventListener("DOMContentLoaded", function () {
       newLabel.appendChild(newCheckbox);
       newLabel.appendChild(document.createTextNode(newValues[index]));
 
-      // Replace the existing checkbox with the new one
       checkbox.parentElement.replaceWith(newLabel);
     });
   }
 
-  // Add a click event listener to the "Change Values" button
   changeButton.addEventListener("click", function (e) {
     e.preventDefault();
     changeCheckboxValuesAndLabels();
   });
 
-  // Function to show selected values
   function showSelectedValues() {
     const checkboxes = Array.from(
       checkboxForm.querySelectorAll('input[type="checkbox"]')
     );
     const selectedValues = checkboxes
-      .filter((checkbox) => checkbox.checked) // Filter for checked checkboxes
+      .filter((checkbox) => checkbox.checked)
       .map((checkbox) => checkbox.value);
 
     result.textContent = "Selected Values: " + selectedValues.join(", ");
   }
 
-  // Add a click event listener to the "Show selected values" button
   showSelectedButton.addEventListener("click", function (e) {
     e.preventDefault();
     showSelectedValues();

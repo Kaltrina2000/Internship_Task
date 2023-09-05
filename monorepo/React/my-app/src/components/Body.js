@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Header } from "./Header"; // Import the Header and OptionPage components
+import { Header } from "./Header";
 import { OptionPage } from "./OptionPage";
-
 
 export function Body() {
   const [step, setStep] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const appContainerStyle = {
-    // Add styles for the container div if needed
-    //width: "100%",    // Adjust the width as a percentage or in pixels
-    //height: "1o0vh",
-  };
   const appStyle = {
     minHeight: "120vh",
     backgroundColor: "#f0f0f0",
@@ -43,251 +37,223 @@ export function Body() {
     cursor: "pointer",
     marginBottom: "-12px",
     borderRadius: "5px",
-    //height: "auto",
   };
   const arrowStyle = {
-    color: "grey", // Adjust the color as needed
-    fontSize: "16px", // Adjust the font size to make it smaller
+    color: "grey",
+    fontSize: "16px",
     position: "relative",
     top: "-25px",
     left: "350",
   };
 
-  // Function to handle option selection and navigation
   const handleOptionSelect = (optionName) => {
     setSelectedOption(optionName);
     setStep(2);
   };
 
-  // Function to handle going back to step 1
   const handleGoBack = () => {
     setSelectedOption(null);
     setStep(1);
   };
 
   return (
-    <div style={appContainerStyle}>
-      <div style={appStyle}>
-        <Header step={step} />
-        {step === 1 ? (
-          <div style={whiteDivStyle}>
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Anti Wrinkle Treatment")}
-            >
-              <img
-                src="/assets/images/image-first.png"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Anti Wrinkle Treatment
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Dermal Fillers")}
-            >
-              <img
-                src="/assets/images/image-second.jpg"
-                alt="  "
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Dermal Fillers
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Secret RF")}
-            >
-              <img
-                src="/assets/images/image-third.jpg"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Secret RF
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Harmony CA")}
-            >
-              <img
-                src="/assets/images/image-fourth.jpg"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Harmony CA
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Profhilo")}
-            >
-              <img
-                src="/assets/images/image-fifth.jpg"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Profhilo
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Facials")}
-            >
-              <img
-                src="/assets/images/image-sixth.jpg"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Facials
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Sclerotherapy")}
-            >
-              <img
-                src="/assets/images/image-first.png"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Sclerotherapy
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("LED")}
-            >
-              <img
-                src="/assets/images/image-sixth.jpg"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                LED
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Fat Dissolve")}
-            >
-              <img
-                src="/assets/images/image-second.jpg"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Fat Dissolve
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-            <div
-              style={innerDivStyle}
-              onClick={() => handleOptionSelect("Growth Factors")}
-            >
-              <img
-                src="/assets/images/image-third.jpg"
-                alt=""
-                width="40"
-                height="40"
-              ></img>
-
-              <p
-                style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}
-              >
-                Growth Factors
-              </p>
-            </div>
-            <ArrowForwardIosIcon style={arrowStyle} />
-          </div>
-        ) : (
-          <>
-            <OptionPage option={selectedOption} onBack={handleGoBack} />
-            <Header step={step} selectedOption={selectedOption} />
-          </>
-        )}
-        {step === 1 ? (
+    <div style={appStyle}>
+      <Header step={step} />
+      {step === 1 ? (
+        <div style={whiteDivStyle}>
           <div
-            style={{
-              backgroundColor: "white", // Set the background color to white
-              width: "400px", // Set the width to 500px
-              height: "30px", // Set the height to 700px
-              margin: "15px",
-              padding: "15px",
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-              borderRadius: "5px",
-              boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.1)",
-            }}
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Anti Wrinkle Treatment")}
           >
-            <p style={{ fontSize: "12px", color: "grey", fontWeight: "500" }}>
-              Not sure about consultation type? Please, call{" "}
-              <a
-                href="tel:02037959063"
-                style={{ color: "dodgerblue", textDecoration: "none" }}
-              >
-                {" "}
-                0203 7959063
-              </a>
+            <img
+              src="/assets/images/image-first.png"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Anti Wrinkle Treatment
             </p>
           </div>
-        ) : (
-          <></>
-        )}
-      </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Dermal Fillers")}
+          >
+            <img
+              src="/assets/images/image-second.jpg"
+              alt="  "
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Dermal Fillers
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Secret RF")}
+          >
+            <img
+              src="/assets/images/image-third.jpg"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Secret RF
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Harmony CA")}
+          >
+            <img
+              src="/assets/images/image-fourth.jpg"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Harmony CA
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Profhilo")}
+          >
+            <img
+              src="/assets/images/image-fifth.jpg"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Profhilo
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Facials")}
+          >
+            <img
+              src="/assets/images/image-sixth.jpg"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Facials
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Sclerotherapy")}
+          >
+            <img
+              src="/assets/images/image-first.png"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Sclerotherapy
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div style={innerDivStyle} onClick={() => handleOptionSelect("LED")}>
+            <img
+              src="/assets/images/image-sixth.jpg"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              LED
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Fat Dissolve")}
+          >
+            <img
+              src="/assets/images/image-second.jpg"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Fat Dissolve
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+          <div
+            style={innerDivStyle}
+            onClick={() => handleOptionSelect("Growth Factors")}
+          >
+            <img
+              src="/assets/images/image-third.jpg"
+              alt=""
+              width="40"
+              height="40"
+            ></img>
+
+            <p style={{ fontWeight: "500", color: "grey", marginLeft: "20px" }}>
+              Growth Factors
+            </p>
+          </div>
+          <ArrowForwardIosIcon style={arrowStyle} />
+        </div>
+      ) : (
+        <>
+          <OptionPage option={selectedOption} onBack={handleGoBack} />
+          <Header step={step} selectedOption={selectedOption} />
+        </>
+      )}
+      {step === 1 ? (
+        <div
+          style={{
+            backgroundColor: "white",
+            width: "400px",
+            height: "30px",
+            margin: "15px",
+            padding: "15px",
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+            borderRadius: "5px",
+            boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <p style={{ fontSize: "12px", color: "grey", fontWeight: "500" }}>
+            Not sure about consultation type? Please, call{" "}
+            <a
+              href="tel:02037959063"
+              style={{ color: "dodgerblue", textDecoration: "none" }}
+            >
+              {" "}
+              0203 7959063
+            </a>
+          </p>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

@@ -3,11 +3,10 @@ import logo from "../logo.svg";
 
 export function Footer() {
   const footerStyles = {
-    textAlign: "center", // Center-align the text
-    fontSize: "13px", // Set a smaller font size
-    padding: "50px ,0", // Add padding to control the footer height
+    textAlign: "center",
+    fontSize: "13px",
+    padding: "50px ,0",
     margin: "0",
-  
   };
 
   return (
@@ -16,7 +15,7 @@ export function Footer() {
         <p style={{ fontWeight: "500", color: "grey" }}>
           Powered By
           <img
-            style={{ width: "60px",height:"20px", verticalAlign: "middle" }}
+            style={{ width: "60px", height: "20px", verticalAlign: "middle" }}
             src={logo}
             alt="My Logo"
           />
